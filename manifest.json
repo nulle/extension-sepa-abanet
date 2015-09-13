@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "SEPA orders to Abanet",
+  "description": "This extension parses SEPA payment orders and fills it in in Abanet order fields",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://epoti.abanka.si/*"
+      ],
+      "js": ["jquery-2.1.4.min.js", "content.js"]
+    }
+  ]
+}
